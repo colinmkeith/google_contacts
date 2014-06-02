@@ -1,0 +1,43 @@
+2.12  08/04/2013
+- Added delay to prevent google errors due to loading too fast.  Previous
+versions would cause over quota errors.  If you get these errors with this
+version, look at line 684 in google-contacts.php and increase the number. 
+The higher the number, the slower the load is.  If the number is too small,
+google will complain because you are hitting their server too fast.
+
+2.11  12/21/2011
+- Added photos to google contacts.  It is one-way only.  Photos on google
+will show up in RC,  new photos added to RC will not appear on google.
+
+2.10  11/12/2011
+- Fixed new bug which prevented deleting contacts on google. caused by changes to RC core
+
+2.09  11/11/2011
+- Fixed bug in backend which caused server error in newer releases of RC.
+
+2.08  06/29/2011
+- Drag and drop copy from other addressbooks to google contacts was broken by a rc revision. Fixed to be compatable
+
+2.07  06/28/2011
+- Made a change to keep up with new core svn revisions.  Fixed duplicate address tab in settings
+- Changed backend to have get_name function to be compatable with new svn revision
+
+2.06  06/05/2011
+- Corrected a bug that showed up on svn revision 4836
+
+2.05  5/27/2011
+- Changed section for settings to match new SVN Revsion 4814
+- Added exception catching for bad google username/password combos
+
+2.04  5/24/2011
+- Modified delete function to use protocol version 1 so that modifications to Zend are no longer necessary 
+- Moved google authentication to init so it doesn't have to authenticate on each transaction which caused google to do CAPTCHA requests.
+
+2.03  5/23/2011
+- Added drag and drop functionality for dragging to or from other contact lists
+- Added re-sync to occur when changing google user/pass in  settings
+- RC Version 4804 was releaseed today,  modifications to core no longer necessary
+
+2.02 05/22/2011
+- Cleaned up data problems with some data going to google
+- Changed update to actually update the google record instead of deleting and resending
